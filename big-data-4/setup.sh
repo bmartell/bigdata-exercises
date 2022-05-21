@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # upgrade spark python to work with python 3
-sudo yum upgrade -y spark-python hive
+#commented the following line because CDH 5 repository is not accessible anymore
+#sudo yum upgrade -y spark-python hive
 
 # remove old derby jar so only one version is on spark's classpath
 sudo rm /usr/lib/flume-ng/lib/derby-10.8.2.2.jar
@@ -11,7 +12,8 @@ gzip -d *.csv.gz
 
 # download and install anaconda for pandas, jupyter
 rm -f Anaconda3-4.0.0-Linux-x86_64.sh
-wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
+#wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
+echo "Please put this URL in your browser to download Anaconda3: http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh"
 bash Anaconda3-4.0.0-Linux-x86_64.sh
 
 # add spark-csv jars to classpath
